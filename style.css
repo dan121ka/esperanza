@@ -48,28 +48,10 @@ footer { padding: 2em; color: #555; font-style: italic; }
 #heart-canvas-container:active { cursor: grabbing; }
 #heart-canvas-container canvas { width: 100% !important; height: 100% !important; }
 
-/* --- ESTILOS PARA LA ROSA ENCANTADA (CORREGIDO) --- */
-#rose-section {
-    background: #080f1a;
-    overflow: hidden;
-    padding-top: 3rem; /* Aumentamos el espacio superior */
-    padding-bottom: 1rem;
-}
-#rose-section h2, #rose-section .rose-text {
-    color: #fff;
-    position: relative;
-    z-index: 1; /* Nos aseguramos que el texto esté por encima */
-}
-.rose-container {
-    position: relative;
-    height: 800px;
-    width: 600px;
-    margin: auto;
-    transform: scale(0.6);
-    /* Reducimos el margen negativo para que no se solape con el título */
-    margin-top: -120px;
-    margin-bottom: -200px;
-}
+/* --- ESTILOS PARA LA ROSA ENCANTADA --- */
+#rose-section { background: #080f1a; overflow: hidden; padding-top: 3rem; padding-bottom: 1rem; }
+#rose-section h2, #rose-section .rose-text { color: #fff; position: relative; z-index: 1; }
+.rose-container { position: relative; height: 800px; width: 600px; margin: auto; transform: scale(0.6); margin-top: -120px; margin-bottom: -200px; }
 .rose-container .glass { height: 800px; width: 600px; background: #122139; border-radius: 300px 300px 0px 0px; position: absolute; }
 .rose-container .glass:before { content: ""; height: 40px; width: 40px; transform-origin: center; border: 25px solid #122139; border-radius: 100%; position: absolute; left: 256px; top: -74px; }
 .rose-container .glass:after { content: ""; position: absolute; height: 15px; width: 600px; background: #a52a2a; top: 100%; left: 0%; }
@@ -108,3 +90,41 @@ footer { padding: 2em; color: #555; font-style: italic; }
 @keyframes bloom7 { 100% { transform: rotate(10deg); } }
 @keyframes glowing { 50% { background: #d7365f; box-shadow: 0px 0px 60px rgba(245, 148, 184, 1); } }
 @keyframes falling { 20% { top: 335px; background: #9d193b; box-shadow: 0px 0px 0px rgba(245, 148, 184, 0); } 100% { top: 835px; opacity: 0; } }
+
+/* --- NUEVO: ESTILOS RESPONSIVOS PARA MÓVILES --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em; /* Reducir tamaño del título principal */
+        min-height: auto; /* Ajustar altura mínima */
+    }
+
+    h2 {
+        font-size: 1.4em; /* Reducir tamaño de subtítulos */
+    }
+    
+    p, li {
+        font-size: 0.9em;
+    }
+
+    section {
+        margin: 1.5em 1em; /* Reducir márgenes */
+        padding: 1.5em; /* Reducir padding interno */
+    }
+
+    /* Ajustar el corazón 3D */
+    #heart-canvas-container {
+        height: 350px; /* Hacer el lienzo del corazón más bajo */
+    }
+
+    /* Ajustar la rosa encantada */
+    .rose-container {
+        transform: scale(0.45); /* Hacer la animación de la rosa mucho más pequeña */
+        margin-top: -220px; /* Ajustar posición vertical */
+        margin-bottom: -280px;
+    }
+
+    #rose-section {
+        padding-top: 2rem;
+        padding-bottom: 0;
+    }
+}
