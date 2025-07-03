@@ -91,40 +91,39 @@ footer { padding: 2em; color: #555; font-style: italic; }
 @keyframes glowing { 50% { background: #d7365f; box-shadow: 0px 0px 60px rgba(245, 148, 184, 1); } }
 @keyframes falling { 20% { top: 335px; background: #9d193b; box-shadow: 0px 0px 0px rgba(245, 148, 184, 0); } 100% { top: 835px; opacity: 0; } }
 
-/* --- NUEVO: ESTILOS RESPONSIVOS PARA MÓVILES --- */
+/* --- ESTILOS RESPONSIVOS PARA MÓVILES (CORREGIDO) --- */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.8em; /* Reducir tamaño del título principal */
-        min-height: auto; /* Ajustar altura mínima */
+        font-size: 1.8em;
+        min-height: auto;
     }
-
     h2 {
-        font-size: 1.4em; /* Reducir tamaño de subtítulos */
+        font-size: 1.4em;
     }
-    
     p, li {
         font-size: 0.9em;
     }
-
     section {
-        margin: 1.5em 1em; /* Reducir márgenes */
-        padding: 1.5em; /* Reducir padding interno */
+        margin: 1.5em 1em;
+        padding: 1.5em;
     }
-
-    /* Ajustar el corazón 3D */
     #heart-canvas-container {
-        height: 350px; /* Hacer el lienzo del corazón más bajo */
+        height: 350px;
     }
 
-    /* Ajustar la rosa encantada */
-    .rose-container {
-        transform: scale(0.45); /* Hacer la animación de la rosa mucho más pequeña */
-        margin-top: -220px; /* Ajustar posición vertical */
-        margin-bottom: -280px;
-    }
-
+    /* Ajustes para la Rosa Encantada en móvil */
     #rose-section {
         padding-top: 2rem;
-        padding-bottom: 0;
+        padding-bottom: 2rem; /* Añadimos espacio abajo */
+    }
+    .rose-container {
+        transform: scale(0.5); /* Ajustamos la escala */
+        margin-top: -180px;
+        margin-bottom: -280px; /* Reducimos el margen negativo para dar espacio al texto */
+    }
+    .rose-text {
+        font-size: 1em;
+        padding: 0 1rem; /* Espaciado lateral para que no pegue a los bordes */
+        margin-top: 1rem; /* Espacio entre la base de la rosa y el texto */
     }
 }
